@@ -44,6 +44,16 @@ public class UserDao {
         return users;
     }
 
+    public void updateUser(User user){
+        String sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
+        try (Connection conn = DataBaseConnection.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql)) {
 
+            stmt.setString(1, user.getNome());
+            stmt.setString(2, user.getEmail());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
