@@ -24,5 +24,22 @@ public class UserService {
         userDao.addUser(user);
     }
 
+    public void updateUser(User user){
+        if (user.getId() <= 0){
+            throw new IllegalArgumentException("Id do usuario invalido.");
+        }
+
+        userDao.updateUser(user);
+    }
+
+    public void deleteUser(int id){
+        if (id <= 0){
+            throw new IllegalArgumentException("Id do usuario invalido.");
+        }
+
+        userDao.deleteUser(id);
+    }
+
+
 
 }
