@@ -10,6 +10,8 @@ import java.util.List;
 
 public class UserDao {
 
+    //camada de acesso de dados
+
     private DataBaseConnection databaseConnection;
 
     public void addUser(User user) {
@@ -67,6 +69,5 @@ public class UserDao {
             e.printStackTrace();
         }
     }
-
 
 }
